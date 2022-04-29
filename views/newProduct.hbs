@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>New Product</title>
+</head>
+<body>
+    <ul style="list-style-type:none;">
+        <h1>New Product</h1>
+        <form action="/newProduct" method="post">
+            Name: <input type="text" name="txtName"> <span>{{error}}</span>
+            <br>
+            Price: <input type="text" name="txtPrice"> <span>{{error}}</span>
+            <br>
+            Device: <input list="devices" name="txtDevice" id="txtDevice">
+                    <datalist id="devices">
+                        <option value="Macbook">
+                        <option value="Iphone">
+                    </datalist>
+            <br>
+            PictureURL: <input type="text" name="txtPic" size="100">
+            <br>
+            <input type="submit" value="Insert">
+        </form>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>All Product</title>
+</head>
+<body>
+    <ul style="list-style-type:none;">
+        <li>
+            <h1 style="color: cornflowerblue;">All Product</h1>
+            <form action="/searchByName" method="post">
+                <input type="text" name="txtSearchByName">
+                <input type="submit" value="Search By Name">
+            </form>
+            <form action="/searchByPrice" method="post">
+                <input type="text" name="txtSearchByPrice">
+                <input type="submit" value="Search By Price">
+            </form>
+        </li>
+
+        <li>
+            <ul>
+                {{#each products}}
+                <li>  Name: {{name}} <br> Price: {{price}} <br> Device: {{device}}
+                    <div>
+                        <img src="{{picURL}}" width="188" height="222.4"/>
+                    </div>
+                    <div>
+                        <a href="/delete?id={{_id}}" onclick="return confirm('Are you sure?')">Delete</a>
+                        <a href="/edit?id={{_id}}">Edit</a>
+                        <br>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+        <a href="/viewAll?page=1">Page 1</a> | <a href="/viewAll?page=2">Page 2</a> |
+        <a href="/viewAll">All</a> |  <a href="/sort">Sort</a> |
+        <a href="/">Back to Home Page</a>
+    </ul>
+</body>
+</html>

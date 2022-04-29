@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <ul style="list-style-type:none;">
+        <h1>Edit Product</h1>
+        <form action="/edit" method="post">
+            <input type="hidden" name="id" value="{{product._id}}">
+            Name: <input type="text" name="txtName" value="{{product.name}}">
+            <br>
+            Price: <input type="text" name="txtPrice" value="{{product.price}}">
+            <br>
+            Device: <input list="devices" name="txtDevice" id="txtDevice" value="{{product.device}}">
+                    <datalist id="devices">
+                        <option value="Macbook">
+                        <option value="Iphone">
+                    </datalist>
+            <br>
+            PictureURL:
+            <div>
+                <img src="{{product.picURL}}" width="188" height="222.4"/>
+            </div>
+            <input type="text" name="txtPic" size="100" value="{{product.picURL}}">
+            <br>
+            <input type="submit" value="Edit">
+        </form>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort</title>
+</head>
+<body>
+    <form action="/sorting" method="get">
+        <label for="{{product.device}}">Choose your device from the list:</label>
+        <input list="devices" name="txtDevice" id="txtDevice" value="{{product.device}}">
+        <datalist id="devices">
+            <option value="Macbook">
+            <option value="Iphone">
+        </datalist>
+        <input type="submit">
+    </form>
+</body>
+</html>
