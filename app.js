@@ -100,30 +100,27 @@ app.post('/newProduct',async (req,res)=>{
     const price  = req.body.txtPrice
     const device = req.body.txtDevice
     const picURL  = req.body.txtPic
-    // const productEntity = new Product({'name':name,'price':price,'device':device ,'picURL':picURL})
-    // await productEntity.save()
-    // res.redirect('/')
     let error = new Object()
     let flag = true
     if(name.trim().length == 0){
-        error["name"] = "Tên không để trắng!"
+        error["name"] = "Name cannot be empty!"
         flag = false
-        console.log("Tên không để trắng!")
+        console.log("Name cannot be empty!")
     }
     if(price.trim().length == 0){
-        error["price"] = "Giá không để trắng!"
+        error["price"] = "Price cannot be empty!"
         flag = false
-        console.log("Giá không để trắng!")
+        console.log("Price cannot be empty!")
     }
     if(typeof price!="number"){
-        error["price"] = "Giá phải là số!"
+        error["price"] = "Price must be in number!"
         flag = false
-        console.log("Giá phải là số!")
+        console.log("Price must be in number!")
     }
     if(picURL.trim().length < 10){
-        error = "Đường dẫn ảnh không hợp lệ"
+        error = "The picture URL is not valid!"
         flag = false
-        console.log("Đường dẫn ảnh không hợp lệ")
+        console.log("The picture URL is not valid!")
     }
     if(flag==true){
         let product = new Product({'name':name,'price':price,'device':device ,'picURL':picURL})
